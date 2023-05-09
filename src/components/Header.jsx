@@ -19,7 +19,7 @@ const StyledHeader = styled.header`
 export default function Header(props) {
     return(
         <StyledHeader>
-            <h2>Rick and Morty Collection</h2>
+            {props.children}
         </StyledHeader>
     );
 }
