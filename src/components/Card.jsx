@@ -1,11 +1,10 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const StylizedCard = styled.div`
-    height: 220px;
+    max-height: 220px;
+    /* height: min-content; */
     width: 550px;
-
-    /* margin: 24px; */
 
     display: flex;
     
@@ -17,16 +16,36 @@ const StylizedCard = styled.div`
     img {
         height: 100%;
         width: auto;
-
+        /* height: min-content; */
+        
         border-radius: 16px 0 0 16px;
+    }
+
+    
+    @media (max-width: 768px) {
+        max-height: fit-content;
+        height: auto;
+        max-width: 300px;
+        width: 100%;
+
+        /* max-width: 200px; */
+
+        flex-direction: column;
+        
+        img {
+            height: auto;
+            /* max-width: 300px; */
+            border-radius: 16px 16px 0px 0px;
+
+        }
     }
 `
 
 const StylizedInfo = styled.div`
-    /* height: 100%; */
     width: 100%;
 
     padding: 16px;
+    /* gap: 8px; */
     
     display: flex;
     justify-content: space-between;
@@ -39,7 +58,6 @@ const StylizedInfo = styled.div`
         border-radius: 100%;
 
         background-color: red;
-
     }
 
     .description {
@@ -65,9 +83,9 @@ const StylizedInfo = styled.div`
         margin-right: 8px;
     }
 
-    /* .status, .location, .first-seen {
-        border: 1px solid red;
-    } */
+    @media (max-width: 768px) {
+        gap: 24px;
+    }
 `
 
 export default function Card(props) {
