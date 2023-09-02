@@ -1,29 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
-import './App.css';
-import Input from './components/Input';
-import CharacterList from './components/CharacterList';
-import Modal from './components/Modal';
+import "./App.css";
+import Input from "./components/Input";
+import CharacterList from "./components/CharacterList";
+import Modal from "./components/Modal";
 
 function App() {
-  const [inputValue, setInputValue] = useState('');
-  
+  const [inputValue, setInputValue] = useState("");
+
   return (
     <div className="App">
       <Header>
         <p>Rick and Morty Collection</p>
-        <Input onChange={(e) => {
-          setInputValue(e.target.value);
-          console.log(e.target.value);
-        }} />
+        <Input
+          onChange={(e) => {
+            setInputValue(e.target.value);
+            console.log(e.target.value);
+          }}
+        />
       </Header>
 
       <h2>Characters:</h2>
 
-      <CharacterList inputValue={inputValue}/>
+      <CharacterList inputValue={inputValue} />
 
       {/* <Modal name = {"Renan"}/> */}
 
